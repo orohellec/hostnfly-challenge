@@ -1,24 +1,26 @@
-# README
+# Hostnfly-challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Generate rails api
+- Script to fill the database in backend/backend_test.rb
+- Service that generate missions in services/generate_missions_service.rb
+- Full CRUD for listings, bookings and reservations
+- index endpoint for missions
 
-Things you may want to cover:
+## Concept
 
-* Ruby version
+Fill database Listing, Booking and Reservation with a json file input. Call a service that handle some logics to fill Mission database. Outpout the missions created in a json file in backend/data/output.json
 
-* System dependencies
+## Configuration
 
-* Configuration
+- clone the repo
+- bundle install
+- rails db:create db:migrate
 
-* Database creation
+## Run the program
 
-* Database initialization
+```ruby
+ruby backend/backend_test.rb
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
