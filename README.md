@@ -18,7 +18,7 @@ Fill database Listing, Booking and Reservation with a json file input. Call a se
 
 ## Run the program
 
-```ruby
+```sh
 ruby backend/backend_test.rb
 ```
 
