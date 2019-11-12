@@ -1,2 +1,0 @@
-class GenerateMission
-end

@@ -11,6 +11,7 @@ reservations = parsed_input["reservations"]
 
 Booking.delete_all
 Reservation.delete_all
+Mission.delete_all
 Listing.delete_all
 
 listings.each do |listing| 
@@ -33,6 +34,25 @@ reservations.each do |reservation|
     start_date: reservation["start_date"], 
     end_date: reservation["end_date"]
   ) 
+end
+
+GenerateMissionsService.new.generate
+
+output = {
+  missions: []
+}
+
+Mission.ordered_by_listing_id.each do |mission|
+  output[:missions] << {
+    listing_id: mission.listing.id,
+    mission_type: mission.mission_type,
+    date: mission.date,
+    price: mission.price
+  }
+end
+
+open('./backend/data/output.json', 'w') do |f|
+  f << JSON.pretty_generate(output)
 end
 
 
